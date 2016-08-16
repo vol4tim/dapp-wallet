@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import _ from 'lodash'
 import { List } from '../components/transactions';
-import { updateConfirms } from '../../../modules/transactions/actions';
+import { load, updateConfirms } from '../../../modules/transactions/actions';
 
 class ListContainer extends Component {
     componentWillMount() {
+        this.props.load()
         this.props.updateConfirms()
     }
     render() {
@@ -20,8 +21,10 @@ function mapStateToProps(state) {
     }
 }
 function mapDispatchToProps(dispatch) {
+    const actions = bindActionCreators({load, updateConfirms}, dispatch)
     return {
-        updateConfirms: bindActionCreators(updateConfirms, dispatch)
+        load: actions.load,
+        updateConfirms: actions.updateConfirms
     }
 }
 

@@ -1,4 +1,4 @@
-import { ADD, UPDATE } from './actionTypes'
+import { LOAD, ADD, UPDATE } from './actionTypes'
 
 const initialState = {
     items: []
@@ -6,6 +6,9 @@ const initialState = {
 
 export default function transactions(state = initialState, action) {
     switch (action.type) {
+		case LOAD:
+			return { ...state, items: action.payload}
+
 		case ADD:
 			return { ...state, items: [action.payload, ...state.items]}
 
