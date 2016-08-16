@@ -1,0 +1,1 @@
+export const REMOVE = 'CONTRACTS_REMOVE'

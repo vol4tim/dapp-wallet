@@ -1,3 +1,6 @@
+import _ from 'lodash'
+import { REMOVE } from './actionTypes'
+
 const initialState = {
     items: [
 		{
@@ -30,6 +33,11 @@ const initialState = {
 
 export default function contracts(state = initialState, action) {
     switch (action.type) {
+		case REMOVE:
+			return { ...state, items: _.remove(state.items, function(item) {
+				return item.address != action.payload;
+			})}
+
         default:
           return state;
     }
