@@ -1,6 +1,7 @@
 import { startSubmit, stopSubmit, reset } from 'redux-form';
 import _ from 'lodash';
 import { transfer as transferForm, getAccounts, getBalance, getTransaction, blockchain } from '../../utils/web3';
+import { flashMessage } from '../app/actions';
 import { add as addTransactions } from '../transactions/actions';
 import { LOAD, UPDATE_BALANCE } from './actionTypes'
 
@@ -25,6 +26,7 @@ export function transfer(form) {
             dispatch(addTransactions(tx, 'transfer'));
             dispatch(stopSubmit('Transfer'));
             dispatch(reset('Transfer'));
+            dispatch(flashMessage('tx: '+ tx))
         } else {
             dispatch(stopSubmit('Transfer', {from: 'ошибка'}));
         }

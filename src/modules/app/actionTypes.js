@@ -1,0 +1,1 @@
+export const FLASH_MESSAGE = 'APP_FLASH_MESSAGE'
