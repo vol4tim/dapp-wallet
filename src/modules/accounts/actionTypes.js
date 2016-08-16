@@ -1,0 +1,2 @@
+export const LOAD = 'ACCOUNTS_LOAD'
+export const UPDATE_BALANCE = 'ACCOUNTS_UPDATE_BALANCE'

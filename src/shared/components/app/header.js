@@ -25,7 +25,7 @@ export default class Header extends Component {
                 />
             <Drawer
                 docked={false}
-                width={400}
+                width={430}
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
                 >

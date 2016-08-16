@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { CONFIRMS } from '../../../../config/config'
 
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import AvPlaylistAddCheck from 'material-ui/svg-icons/av/playlist-add-check';
@@ -9,11 +10,11 @@ const Item = function(props) {
     const { tx, type, from, to, value, gas, confirm } = props
 
     var avatar = <Badge
-            badgeContent={confirm}
+            badgeContent={(confirm <= CONFIRMS) ? confirm : '>'+ CONFIRMS}
             secondary={true}
             badgeStyle={{top: 9, right: 11}}
             >
-            {confirm >= 6 ?
+            {confirm >= CONFIRMS ?
                 <AvPlaylistAddCheck />
             :
                 <AvPlaylistPlay />

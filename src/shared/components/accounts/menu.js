@@ -10,7 +10,7 @@ import AccountBalanceWallet from 'material-ui/svg-icons/action/account-balance-w
 const Menu = function(props) {
     return <div>
         <Subheader>Аккаунты</Subheader>
-        <MenuItem leftIcon={<AccountBalanceWallet />} onTouchTap={props.handleClose} containerElement={<Link to="/accounts/transfer" />}>Отправить</MenuItem>
+        <MenuItem leftIcon={<AccountBalanceWallet />} onTouchTap={props.handleClose} containerElement={<Link to="/transfer" />}>Отправить</MenuItem>
         {<List items={props.accounts} />}
     </div>
 }
